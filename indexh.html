@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang=es>
+<head id=myHead>
+<meta charset=UTF-8 >  
+<!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'> -->
+<link rel="shortcut icon" href="https://cdn.rawgit.com/konpa/devicon/master/icons/html5/html5-plain.svg" type="image/svg">
+<link rel="stylesheet" href="colors.css">
+<title> CSS</title>
+<style>
+
+
+</style>
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-danger" >  
+        <a class="navbar-brand navbar-light" href="./Style/00ccs01.html"> 
+       <img src="https://www.mclibre.org/consultar/htmlcss/varios/iconos/icono-html5.svg" class="d-inline-block align-top" width="30" height="30" alt=""></a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+     <ul class="navbar-nav">
+     <li class="nav-item active"> <a class="nav-link" target="_blank" href="./Style/00ccs01.html"> HTML<span class="sr-only">(current) </span></a></li>
+     <li class="nav-item"><a class="nav-link" target="_blank" href="#Sintaxis"> Sintaxis</a></li>
+     <li class="nav-item"><a class="nav-link" target="_blank" href="#robots">Robots</a></li>
+     <li class="nav-item"> <a class="nav-link" target="_blank" href="./Style/framework/bootstrapbuttonslinks.html"> CSS</a></li>
+  
+    
+     <li class="nav-item dropdown "> 
+     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </a>
+     <div class="dropdown-menu aria-labelledby navbarDropdownMenuLink">
+     <a class="dropdown-item" target="_blank" href="./Html/HTML-01-meta.html">  Framework </a>
+     <a class="dropdown-item" target="_blank" href="indexaJS.html">JS</a> 
+     <a class="dropdown-item" target="_blank" href="./Shell/BashInfo.html">BASH</a> 
+   
+  
+   <li>  <form  method="Get" target="_blank" action="http://www.google.com/custom" class="form-inline my-2 my-lg-0">
+     <input class="form-control mr-sm-2" type="text" size="auto" name="q" placeholder="Buscar" aria-label="Search">
+      <input type="hidden" name="domains" value="https://www.w3schools.com/"> 
+     <button type="submit" name="sitesearch" value="https://www.w3schools.com/" class="btn btn-outline-light my-2 my-sm-0" >OK</button>
+   </form></li>
+     </div></ul> 
+   </div>  
+   </nav>
+
+      
+      </header>
+<main class="container" id="container">
+    <progress>
+    </progress>
+   
+    <script>var fecha=new Date();
+      alert(fecha.getDate()) 
+      var d = new Date();
+  d.setUTCHours(1,0,0,0);
+  for (var i=7; i>0; i--) {
+    console.log(d.toLocaleString());
+    d.setUTCDate(d.getUTCDate() + 1);
+  }
+      
+    </script>
+         
+         <script type="text/javascript">
+          var weekdaystxt=["Sunday", "Monday", "Thuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+          var monthtxt=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+          function showLocalTime(container, servermode, offsetMinutes, displayversion){
+            if (!document.getElementById || !document.getElementById("container")) return
+            this.container=document.getElementById("container")
+            this.displayversion=displayversion
+            var servertimestring=(servermode=="server-php")? '<?php print date("F d, Y H:i:s", time())?>' : (servermode=="server-ssi")? '<!--#config timefmt="%B %d, %Y %H:%M:%S"--><!--#echo var="DATE_LOCAL" -->' : '<%= Now() %>'
+            this.localtime=this.serverdate=new Date(servertimestring)
+            this.localtime.setTime(this.serverdate.getTime()+offsetMinutes*60*1000) //add user offset to server time
+            this.updateTime()
+            this.updateContainer()
+          }
+          
+          showLocalTime.prototype.updateTime=function(){
+            var thisobj=this
+            this.localtime.setSeconds(this.localtime.getSeconds()+1)
+            setTimeout(function(){thisobj.updateTime()}, 1000) //update time every second
+          }
+          
+          showLocalTime.prototype.updateContainer=function(){
+            var thisobj=this
+            if (this.displayversion=="long")
+            this.container.innerHTML=this.localtime.toLocaleString()
+            else{
+              var hour=this.localtime.getHours()
+              var minutes=this.localtime.getMinutes()
+              var seconds=this.localtime.getSeconds()
+              var dayofweek=weekdaystxt[this.localtime.getDay()]
+              var month=monthtxt[this.localtime.getMonth()]
+              this.container.innerHTML=formatField(hour, 2)+":"+formatField(minutes)+":"+formatField(seconds)
+            }
+            setTimeout(function(){thisobj.updateContainer()}, 1000)
+          }
+          
+          function formatField(num, isHour){
+            return (num<=9)? "0"+num : num
+          }
+          </script> 
+</main>
+
+<hr class=my-3>
+<footer class=bg-danger>
+
+<div style='color: #ffff;  '>
+    <p id='copyright'>Copyright &copy; 2020 Armand  🧑🏻‍</p>
+        <p id='credits'>Layout por Armand 💻 </p></div>
+
+    </footer>
+    <hr class=my-3>
+
+<script src=https://code.jquery.com/jquery-3.2.1.slim.min.js integrity=sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js integrity=sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js integrity=sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl crossorigin=anonymous></script>
+</body>
+</html>
